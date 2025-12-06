@@ -11,7 +11,6 @@ import { Upload, Download } from "lucide-react"
 export default function VisaPosterGenerator() {
   const [studentName, setStudentName] = useState("")
   const [studentPhoto, setStudentPhoto] = useState<string | null>(null)
-
   const [country, setCountry] = useState("")
   const [leftFlag, setLeftFlag] = useState<string | null>(null)
   const [rightFlag, setRightFlag] = useState<string | null>(null)
@@ -19,7 +18,6 @@ export default function VisaPosterGenerator() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const posterRef = useRef<HTMLDivElement>(null)
 
-  // Country → Flag File Mapping
   const flagMap: Record<string, { left: string; right: string }> = {
     USA: { left: "/flags/usa.png", right: "/flags/usa.png" },
     UK: { left: "/flags/uk.png", right: "/flags/uk.png" },
@@ -63,24 +61,21 @@ export default function VisaPosterGenerator() {
 
         {/* Inputs */}
         <div className="flex flex-wrap gap-4 items-end justify-center">
-
-          {/* Name */}
-          <div className="space-y-1">
+          <div className="space-y-1 w-full sm:w-60">
             <Label htmlFor="name">Student Name</Label>
             <Input
               id="name"
               placeholder="Enter name"
               value={studentName}
               onChange={(e) => setStudentName(e.target.value)}
-              className="w-60"
+              className="w-full"
             />
           </div>
 
-          {/* Country Dropdown */}
-          <div className="space-y-1">
+          <div className="space-y-1 w-full sm:w-60">
             <Label>Country</Label>
             <select
-              className="border rounded-md p-2 w-60"
+              className="border rounded-md p-2 w-full"
               value={country}
               onChange={(e) => handleCountryChange(e.target.value)}
             >
@@ -93,8 +88,7 @@ export default function VisaPosterGenerator() {
             </select>
           </div>
 
-          {/* Upload Photo */}
-          <div>
+          <div className="w-full sm:w-auto">
             <input
               type="file"
               accept="image/*"
@@ -102,14 +96,16 @@ export default function VisaPosterGenerator() {
               ref={fileInputRef}
               className="hidden"
             />
-            <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
+            <Button variant="outline" onClick={() => fileInputRef.current?.click()} className="w-full sm:w-auto">
               <Upload className="w-4 h-4 mr-2" />
               {studentPhoto ? "Change Photo" : "Upload Photo"}
             </Button>
           </div>
 
-          {/* Download Button */}
-          <Button onClick={handleDownload} className="bg-green-600 hover:bg-green-700">
+          <Button
+            onClick={handleDownload}
+            className="bg-green-600 hover:bg-green-700 w-full sm:w-auto flex justify-center items-center"
+          >
             <Download className="w-4 h-4 mr-2" />
             Download PNG
           </Button>
@@ -117,8 +113,10 @@ export default function VisaPosterGenerator() {
 
         {/* Poster Preview */}
         <div className="flex justify-center">
-          <div ref={posterRef} className="relative" style={{ width: 595, height: 842 }}>
-
+          <div
+            ref={posterRef}
+            className="relative w-full max-w-[595px] aspect-[595/842] mx-auto"
+          >
             {/* Background */}
             <img
               src="/images/visa.png"
@@ -130,7 +128,9 @@ export default function VisaPosterGenerator() {
             {/* Student Name */}
             {studentName && (
               <div className="absolute left-0 right-0 text-center" style={{ top: "36%" }}>
-                <span className="text-2xl font-bold text-blue-900">{studentName}</span>
+                <span className="text-base sm:text-2xl md:text-3xl font-bold text-blue-900">
+                  {studentName}
+                </span>
               </div>
             )}
 
@@ -140,45 +140,40 @@ export default function VisaPosterGenerator() {
                 <img
                   src={studentPhoto || "/placeholder.svg"}
                   alt="Student"
-                  className="w-52 h-52 rounded-full object-cover border-4 border-white shadow-lg"
+                  className="w-33 sm:w-44 md:w-52 h-33 sm:h-44 md:h-52 rounded-full object-cover border-4 border-white shadow-lg"
                 />
               </div>
             )}
 
             {/* Left Flag */}
-            {/* Left Flag (pole near circle, flag to the left) */}
             {leftFlag && (
               <img
                 src={leftFlag}
                 alt="Left Flag"
-                className="absolute"
+                className="absolute w-20 sm:w-28 md:w-36"
                 style={{
-                  width: "140px",
                   top: "50%",
-                  left: "9.5%",
+                  left: "8.7%",
                   transform: "translateY(-50%) scaleX(-1) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
                 }}
               />
             )}
 
-            {/* Right Flag (flip horizontally so pole touches circle) */}
+            {/* Right Flag */}
             {rightFlag && (
               <img
                 src={rightFlag}
                 alt="Right Flag"
-                className="absolute"
+                className="absolute w-20 sm:w-28 md:w-36"
                 style={{
-                  width: "140px",
                   top: "50%",
-                  right: "9.5%",
+                  right: "8.8%",
                   transform: "translateY(-50%) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
-
                 }}
               />
             )}
-
           </div>
         </div>
       </div>
