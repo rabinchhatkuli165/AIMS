@@ -47,7 +47,25 @@ export default function VisaPosterGenerator() {
 
   const handleDownload = async () => {
     if (!posterRef.current) return
-    const canvas = await html2canvas(posterRef.current, { scale: 2, useCORS: true })
+
+    // Ensure all images loaded
+    const images = posterRef.current.querySelectorAll('img')
+    await Promise.all(
+      Array.from(images).map(
+        (img) =>
+          new Promise<void>((resolve) => {
+            if (img.complete) resolve()
+            else img.onload = () => resolve()
+          })
+      )
+    )
+
+    const canvas = await html2canvas(posterRef.current, {
+      scale: 2,
+      useCORS: true,
+      allowTaint: true,
+    })
+
     const link = document.createElement("a")
     link.download = `${studentName || "visa-granted"}-poster.png`
     link.href = canvas.toDataURL("image/png")
@@ -55,9 +73,11 @@ export default function VisaPosterGenerator() {
   }
 
   return (
-    <div className="min-h-screen bg-muted p-6">
+    <div className="min-h-screen bg-gray-100 p-4 sm:p-6">
       <div className="max-w-4xl mx-auto space-y-6">
-        <h1 className="text-2xl font-bold text-center">AIMS Visa Poster Generator</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-center text-blue-900">
+          AIMS Visa Poster Generator
+        </h1>
 
         {/* Inputs */}
         <div className="flex flex-wrap gap-4 items-end justify-center">
@@ -96,7 +116,11 @@ export default function VisaPosterGenerator() {
               ref={fileInputRef}
               className="hidden"
             />
-            <Button variant="outline" onClick={() => fileInputRef.current?.click()} className="w-full sm:w-auto">
+            <Button
+              variant="outline"
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full sm:w-auto flex justify-center items-center"
+            >
               <Upload className="w-4 h-4 mr-2" />
               {studentPhoto ? "Change Photo" : "Upload Photo"}
             </Button>
@@ -128,7 +152,7 @@ export default function VisaPosterGenerator() {
             {/* Student Name */}
             {studentName && (
               <div className="absolute left-0 right-0 text-center" style={{ top: "36%" }}>
-                <span className="text-base sm:text-2xl md:text-3xl font-bold text-blue-900">
+                <span className="text-sm sm:text-base md:text-2xl font-bold text-blue-900">
                   {studentName}
                 </span>
               </div>
@@ -140,7 +164,7 @@ export default function VisaPosterGenerator() {
                 <img
                   src={studentPhoto || "/placeholder.svg"}
                   alt="Student"
-                  className="w-33 sm:w-44 md:w-52 h-33 sm:h-44 md:h-52 rounded-full object-cover border-4 border-white shadow-lg"
+                  className="w-24 sm:w-36 md:w-52 h-24 sm:h-36 md:h-52 rounded-full object-cover border-4 border-white shadow-lg"
                 />
               </div>
             )}
@@ -150,10 +174,10 @@ export default function VisaPosterGenerator() {
               <img
                 src={leftFlag}
                 alt="Left Flag"
-                className="absolute w-20 sm:w-28 md:w-36"
+                className="absolute w-16 sm:w-28 md:w-36"
                 style={{
                   top: "50%",
-                  left: "8.7%",
+                  left: "8%",
                   transform: "translateY(-50%) scaleX(-1) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
                 }}
@@ -165,10 +189,10 @@ export default function VisaPosterGenerator() {
               <img
                 src={rightFlag}
                 alt="Right Flag"
-                className="absolute w-20 sm:w-28 md:w-36"
+                className="absolute w-16 sm:w-28 md:w-36"
                 style={{
                   top: "50%",
-                  right: "8.8%",
+                  right: "8%",
                   transform: "translateY(-50%) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
                 }}
