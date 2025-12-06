@@ -1,0 +1,170 @@
+[00:00:01.524] Server  LOG     
+[00:00:01.525] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:01.526] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:01.527] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:01.527] Server  LOG     
+[00:00:01.528] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:01.528] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:01.528] Server  LOG     
+[00:00:01.837] Server  LOG      ✓ Ready in 1213ms
+[00:00:10.378] Server  LOG      ○ Compiling / ...
+[00:00:13.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.389] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:14.390] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:14.390] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1764915610988}
+[00:00:37.475] Browser DEBUG   #1 0ms Starting document clone with size 1920x957 scrolled to 0,0
+[00:00:37.640] Browser ERROR   unhandledRejection: Error: Attempting to parse an unsupported color function "lab"
+[00:00:40.123] Browser DEBUG   #2 0ms Starting document clone with size 1920x957 scrolled to 0,0
+[00:00:40.246] Browser ERROR   unhandledRejection: Error: Attempting to parse an unsupported color function "lab"
+[00:06:01.289] Server  LOG      ✓ Compiled in 154ms
+[00:10:00.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:00.956] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:00.956] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:10:00.956] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1764916197543}
+[00:10:42.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:42.695] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:42.695] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:10:42.695] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1764916239291}
+[23:15:37.099] Server  LOG      ✓ Compiled in 4.4s
+[23:15:39.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:15:39.264] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:15:39.264] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[23:15:39.264] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1764999339058}
+[23:16:02.692] Server  LOG      ✓ Compiled in 91ms
+[23:21:50.601] Server  LOG      ✓ Compiled in 113ms
+[23:26:12.599] Server  LOG      ✓ Compiled in 147ms
+[23:26:14.958] Server  LOG      ✓ Compiled in 99ms
+[23:26:54.628] Server  LOG      ✓ Compiled in 347ms
+[23:26:56.395] Server  LOG      ✓ Compiled in 99ms
+[23:27:00.755] Server  LOG      ✓ Compiled in 134ms
+[23:27:07.877] Server  LOG      ✓ Compiled in 89ms
+[23:27:10.862] Server  LOG      ✓ Compiled in 92ms
+[23:27:15.412] Server  LOG      ✓ Compiled in 81ms
+[23:27:18.362] Browser ERROR   ./app/page.tsx:174:19
+Parsing ecmascript source code failed
+  172 |                   top: "50%",
+  173 |                   right: "2%",
+> 174 |                   ,
+      |                   ^
+  175 |                 }}
+  176 |               />
+  177 |             )}
+
+Expected '</', got ','
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[23:29:15.214] Server  LOG      ✓ Compiled in 87ms
+[23:29:17.123] Server  LOG      ✓ Compiled in 74ms
+[23:29:29.263] Server  LOG      ✓ Compiled in 71ms
+[23:29:31.240] Server  LOG      ✓ Compiled in 71ms
+[23:29:34.369] Server  LOG      ✓ Compiled in 87ms
+[23:29:39.045] Server  LOG      ✓ Compiled in 63ms
+[23:29:41.955] Server  LOG      ✓ Compiled in 70ms
+[23:29:55.437] Server  LOG      ✓ Compiled in 80ms
+[23:30:04.960] Server  LOG      ✓ Compiled in 57ms
+[23:30:07.517] Server  LOG      ✓ Compiled in 68ms
+[23:30:36.253] Server  LOG      ✓ Compiled in 55ms
+[23:30:39.774] Server  LOG      ✓ Compiled in 79ms
+[23:31:02.891] Server  LOG      ✓ Compiled in 69ms
+[23:31:06.467] Server  LOG      ✓ Compiled in 62ms
+[23:31:09.443] Server  LOG      ✓ Compiled in 55ms
+[23:31:11.867] Server  LOG      ✓ Compiled in 64ms
+[23:31:14.089] Server  LOG      ✓ Compiled in 58ms
+[23:31:16.125] Server  LOG      ✓ Compiled in 60ms
+[23:31:25.150] Server  LOG      ✓ Compiled in 60ms
+[23:31:34.023] Server  LOG      ✓ Compiled in 63ms
+[23:31:34.139] Browser ERROR   ./app/page.tsx:175:19
+Parsing ecmascript source code failed
+  173 |                   right: "10%",
+  174 |                   z
+> 175 |                   transform: "translateY(-50%) rotate(18deg)",
+      |                   ^^^^^^^^^
+  176 |                 }}
+  177 |               />
+  178 |             )}
+
+Expected '</', got 'transform'
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[23:31:37.674] Browser ERROR   ./app/page.tsx:175:19
+Parsing ecmascript source code failed
+  173 |                   right: "10%",
+  174 |                   zIndex
+> 175 |                   transform: "translateY(-50%) rotate(18deg)",
+      |                   ^^^^^^^^^
+  176 |                 }}
+  177 |               />
+  178 |             )}
+
+Expected '</', got 'transform'
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[23:31:42.698] Server  LOG      ✓ Compiled in 70ms
+[23:31:46.766] Server  LOG      ✓ Compiled in 57ms
+[23:31:49.697] Server  LOG      ✓ Compiled in 73ms
+[23:31:49.806] Browser ERROR   ./app/page.tsx:174:28
+Parsing ecmascript source code failed
+  172 |                   top: "50%",
+  173 |                   right: "10%",
+> 174 |                   zIndex: -,
+      |                            ^
+  175 |                   transform: "translateY(-50%) rotate(18deg)",
+  176 |                 }}
+  177 |               />
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[23:31:57.301] Server  LOG      ✓ Compiled in 71ms
+[23:32:14.431] Server  LOG      ✓ Compiled in 62ms
+[23:32:19.611] Server  LOG      ✓ Compiled in 62ms
+[23:33:04.340] Server  LOG      ✓ Compiled in 60ms
+[23:33:08.248] Server  LOG      ✓ Compiled in 58ms
+[23:33:11.785] Server  LOG      ✓ Compiled in 65ms
+[23:33:18.630] Server  LOG      ✓ Compiled in 69ms
+[23:57:32.772] Server  LOG      ✓ Compiled in 224ms
+[23:57:39.178] Server  LOG      ✓ Compiled in 65ms
+[23:57:40.305] Server  LOG      ✓ Compiled in 59ms
+[23:57:42.807] Server  LOG      ✓ Compiled in 65ms
+[24:23:54.207] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:23:54.655] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:23:54.656] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[24:23:54.656] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765003434450}
+[24:24:29.947] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:24:30.093] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:24:30.093] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[24:24:30.093] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765003469890}
+[24:27:26.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:27:27.122] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:27:27.122] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[24:27:27.122] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765003646905}
