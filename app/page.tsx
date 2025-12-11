@@ -22,7 +22,7 @@ export default function VisaPosterGenerator() {
   const flagMap: Record<string, { left: string; right: string }> = {
     USA: { left: "/flags/usa.png", right: "/flags/usa.png" },
     UK: { left: "/flags/uk.png", right: "/flags/uk.png" },
-    Australia: { left: "/flags/aus2.png", right: "/flags/aus2.png" },
+    Australia: { left: "/flags/aus.png", right: "/flags/aus.png" },
     NZ: { left: "/flags/nz.png", right: "/flags/nz.png" },
     Canada: { left: "/flags/canada.png", right: "/flags/canada.png" },
   }
