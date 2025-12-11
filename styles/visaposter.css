@@ -1,0 +1,88 @@
+.student-name-box {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  padding: 0 1rem;
+}
+
+.student-name-text .Student-name {
+  color: #144297;
+  font-weight: 700;
+  font-size: 23px;
+  font-family: 'Arial Narrow Bold', sans-serif,'cursive';
+}
+.student-name-text p{
+  color: #000000;
+  font-size: small;
+}
+
+.visa-p span{
+    font-weight: 700;
+}
+.student-photo-box {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.visa-granted-text{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: 'Arial Narrow Bold', sans-serif,'cursive';
+    border-radius: 20px;
+    padding: 2px 2px 2px 8px;
+    background-color: rgb(192, 8, 8);
+}
+.content {
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Arial Narrow Bold', Arial, sans-serif;
+}
+
+.content-1st {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.section1, .section2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+}
+
+.icon {
+    color: #000;
+    font-size: 18px;
+}

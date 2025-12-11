@@ -1,5 +1,5 @@
 "use client"
-
+import "@/styles/visaposter.css"
 import type React from "react"
 import { useState, useRef } from "react"
 import html2canvas from "html2canvas"
@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Upload, Download } from "lucide-react"
+import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 export default function VisaPosterGenerator() {
   const [studentName, setStudentName] = useState("")
@@ -21,7 +22,7 @@ export default function VisaPosterGenerator() {
   const flagMap: Record<string, { left: string; right: string }> = {
     USA: { left: "/flags/usa.png", right: "/flags/usa.png" },
     UK: { left: "/flags/uk.png", right: "/flags/uk.png" },
-    Australia: { left: "/flags/aus.png", right: "/flags/aus.png" },
+    Australia: { left: "/flags/aus2.png", right: "/flags/aus2.png" },
     NZ: { left: "/flags/nz.png", right: "/flags/nz.png" },
     Canada: { left: "/flags/canada.png", right: "/flags/canada.png" },
   }
@@ -139,11 +140,11 @@ export default function VisaPosterGenerator() {
         <div className="flex justify-center">
           <div
             ref={posterRef}
-            className="relative w-full max-w-[595px] aspect-[595/842] mx-auto"
+            className="relative w-full max-w-[595px] aspect-595/842 mx-auto"
           >
             {/* Background */}
             <img
-              src="/images/visa.png"
+              src="/images/visa1.png"
               alt="AIMS Visa Template"
               className="w-full h-full object-cover"
               crossOrigin="anonymous"
@@ -151,33 +152,37 @@ export default function VisaPosterGenerator() {
 
             {/* Student Name */}
             {studentName && (
-              <div className="absolute left-0 right-0 text-center" style={{ top: "36%" }}>
-                <span className="text-sm sm:text-base md:text-2xl font-bold text-blue-900">
-                  {studentName}
-                </span>
+              <div className="student-name-box">
+                <div className="student-name-text">
+                  <span className="Student-name">{studentName}</span>
+                  <div className="visa-p">on Successful Visa Grant for <span>{country}</span></div>
+                </div>
               </div>
             )}
 
             {/* Student Photo */}
             {studentPhoto && (
-              <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "44%" }}>
+              <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "43.85%" }}>
                 <img
                   src={studentPhoto || "/placeholder.svg"}
                   alt="Student"
-                  className="w-24 sm:w-36 md:w-52 h-24 sm:h-36 md:h-52 rounded-full object-cover border-4 border-white shadow-lg"
+                  className="w-24 sm:w-36 md:w-55 h-24 sm:h-36 md:h-55 rounded-full object-cover border-4 border-white shadow-lg bg-white relative z-10"
                 />
               </div>
             )}
+            <div className="visa-granted-text">
+              VISA GRANTED
+            </div>
 
             {/* Left Flag */}
             {leftFlag && (
               <img
                 src={leftFlag}
                 alt="Left Flag"
-                className="absolute w-16 sm:w-28 md:w-36"
+                className="absolute w-16 sm:w-25 md:w-31"
                 style={{
                   top: "50%",
-                  left: "8%",
+                  left: "11%",
                   transform: "translateY(-50%) scaleX(-1) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
                 }}
@@ -189,15 +194,28 @@ export default function VisaPosterGenerator() {
               <img
                 src={rightFlag}
                 alt="Right Flag"
-                className="absolute w-16 sm:w-28 md:w-36"
+                className="absolute w-16 sm:w-25 md:w-31"
                 style={{
                   top: "50%",
-                  right: "8%",
+                  right: "11%",
                   transform: "translateY(-50%) rotate(18deg)",
                   filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.35))",
                 }}
               />
             )}
+            <div className="content">
+              <div className="content-1st">Do Visit Us For More Information</div>
+              <div className="contact-info">
+                <div className="section1">
+                  <p><FaPhone className="icon" /> +977-1-4544906</p>
+                  <p><FaPhone className="icon" /> +977-9851169306</p>
+                </div>
+                <div className="section2">
+                  <p><FaEnvelope className="icon"/> aimsglobal.edu.np@gmail.com</p>
+                  <p><FaGlobe className="icon" /> www.aimsglobal.edu.np</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
