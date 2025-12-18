@@ -142,13 +142,31 @@ export default function VisaPosterGenerator() {
             ref={posterRef}
             className="relative w-full max-w-[595px] aspect-595/842 mx-auto"
           >
-            {/* Background */}
+            {/* Base Background */}
             <img
               src="/images/visa1.png"
               alt="AIMS Visa Template"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover z-0"
               crossOrigin="anonymous"
             />
+
+            {/* Country Overlay (Australia landmarks) */}
+            {country === "Australia" && (
+              <img
+                src="/images/australia-overlay.png"
+                alt="Australia Overlay"
+                className="absolute object-cover opacity-30"
+                style={{
+                  width: "78.5%",
+                  height: "78%",
+                  top: "5.3%",
+                  left: "11%",
+                }}
+
+                crossOrigin="anonymous"
+              />
+            )}
+
 
             {/* Student Name */}
             {studentName && (
@@ -211,7 +229,7 @@ export default function VisaPosterGenerator() {
                   <p><FaPhone className="icon" /> +977-9851169306</p>
                 </div>
                 <div className="section2">
-                  <p><FaEnvelope className="icon"/> aimsglobal.edu.np@gmail.com</p>
+                  <p><FaEnvelope className="icon" /> aimsglobal.edu.np@gmail.com</p>
                   <p><FaGlobe className="icon" /> www.aimsglobal.edu.np</p>
                 </div>
               </div>
